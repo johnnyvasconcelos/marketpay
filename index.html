@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script type="module" src="./assets/scripts/main.mjs" defer></script>
+    <title>Market</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Register market -->
+      <form action="post" class="register none">
+        <!-- Main info -->
+        <label for="market_name">Market Name</label>
+        <input
+          type="text"
+          id="market_name"
+          name="market_name"
+          placeholder="Market Name"
+          required
+        />
+
+        <label for="market_owner">Market Owner</label>
+        <input
+          type="text"
+          id="market_owner"
+          name="market_owner"
+          placeholder="Market Owner"
+          required
+        />
+
+        <!-- ID and local -->
+        <label for="address">Physical Address</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Physical Address"
+        />
+
+        <label for="business_id">Business Number (ID)</label>
+        <input
+          type="text"
+          id="business_id"
+          name="business_id"
+          placeholder="Business Number"
+        />
+
+        <!-- Financial settings -->
+        <div class="inputs">
+          <div class="input w-50">
+            <label for="actual_cash">Actual Cash ($)</label>
+            <input
+              type="number"
+              id="actual_cash"
+              name="actual_cash"
+              step="0.01"
+              placeholder="0.00"
+            />
+          </div>
+          <div class="input w-50">
+            <label for="currency">Currency</label>
+            <select id="currency" name="currency">
+              <option value="" disabled selected>Select Currency</option>
+              <option value="USD">USD - US Dollar</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="AUD">AUD - Australian Dollar</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="bank_account">Bank Account / Routing</label>
+        <input
+          type="text"
+          id="bank_account"
+          name="bank_account"
+          placeholder="Bank Account / Routing"
+        />
+
+        <label for="payroll_cycle">Payroll Cycle</label>
+        <select id="payroll_cycle" name="payroll_cycle">
+          <option value="" disabled selected>Select Payroll Cycle</option>
+          <option value="weekly">Weekly</option>
+          <option value="bi-weekly">Bi-weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+
+        <div class="buttons">
+          <!-- Button to trigger new employee fields -->
+          <button type="submit" class="add register-market">
+            Register Market
+          </button>
+        </div>
+      </form>
+      <form action="post" class="register-employee none">
+        <h3>Register Employee</h3>
+
+        <label>Employee Name</label>
+        <input
+          type="text"
+          id="employee_name"
+          name="employee_name"
+          placeholder="Name"
+        />
+
+        <label>Role</label>
+        <select id="employee_role" name="employee_role">
+          <option value="" disabled selected>Select Role</option>
+          <option value="manager">Manager</option>
+          <option value="cashier">Cashier</option>
+          <option value="stocker">Stocker</option>
+          <option value="security">Security</option>
+          <option value="cleaner">Cleaner</option>
+        </select>
+
+        <label>Salary</label>
+        <input
+          type="number"
+          id="employee_salary"
+          name="employee_salary"
+          step="0.01"
+          placeholder="Salary"
+        />
+        <button class="add register-employee">Add Employee</button>
+      </form>
+      <div class="dashboard">
+        <aside>
+          <div class="aside-logo">
+            <img
+              src="./assets/images/marketpay.webp"
+              alt="MarketPay - Market System."
+            />
+          </div>
+          <nav class="menu">
+            <ul>
+              <li>
+                <a href="./index.html" class="active"
+                  ><span class="material-symbols-outlined"> home </span>
+                  Dashboard</a
+                >
+              </li>
+              <li>
+                <a href="./sales.html"
+                  ><span class="material-symbols-outlined"> shopping_bag </span>
+                  Sales</a
+                >
+              </li>
+              <li>
+                <a href="./products.html"
+                  ><span class="material-symbols-outlined">
+                    deployed_code
+                  </span>
+                  Products</a
+                >
+              </li>
+              <li>
+                <a href="./employees.html"
+                  ><span class="material-symbols-outlined"> group </span>
+                  Employees</a
+                >
+              </li>
+              <li>
+                <a href="./charts.html"
+                  ><span class="material-symbols-outlined"> bar_chart </span>
+                  Charts</a
+                >
+              </li>
+              <li>
+                <a href="./settings.html"
+                  ><span class="material-symbols-outlined"> settings </span>
+                  Settings</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <a href="#" class="leave"
+            ><span class="material-symbols-outlined"> logout </span>Leave</a
+          >
+        </aside>
+        <main>
+          <header>
+            <h1>Título</h1>
+          </header>
+        </main>
+        <!--
+        <h2>💰 Market Cash</h2>
+
+        <form method="post">
+          <input type="number" placeholder="Quantity ($)" />
+          <input type="text" placeholder="Subject" />
+
+          <div class="buttons">
+            <button type="submit" class="add">Add</button>
+            <button type="submit" class="remove">Remove</button>
+            <button type="submit" class="transfer">Transfer</button>
+          </div>
+        </form>
+
+        <div class="cash">Cash: $ 0,00</div>
+
+        <div class="historic"></div>
+        -->
+      </div>
+    </div>
+  </body>
+</html>
