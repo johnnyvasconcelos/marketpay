@@ -1,8 +1,9 @@
 // main.mjs
-import CashManage from "../../management-market.mjs";
+import CashManage from "./management-market.mjs";
 const market = {};
 const employees = [];
 // DOM
+console.log("main.js  funcionando cacete");
 const buttons = document.querySelectorAll("button");
 const dashboard = document.querySelector(".dashboard");
 const addEmployee = document.querySelector(".add-employee");

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <script type="module" src="./assets/scripts/main.mjs" defer></script>
+    <script type="module" src="./assets/scripts/main.js" defer></script>
     <title>Market</title>
   </head>
   <body>
@@ -132,63 +132,474 @@
       </form>
       <div class="dashboard">
         <aside>
-          <div class="aside-logo">
-            <img
-              src="./assets/images/marketpay.webp"
-              alt="MarketPay - Market System."
-            />
+          <div class="aside-content">
+            <div class="aside-logo">
+              <img
+                src="./assets/images/marketpay.webp"
+                alt="MarketPay - Market System."
+              />
+            </div>
+            <nav class="menu">
+              <ul>
+                <li>
+                  <a href="./index.html" class="active"
+                    ><span class="material-symbols-outlined"> home </span>
+                    Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a href="./finances.html"
+                    ><span class="material-symbols-outlined">
+                      cards_stack
+                    </span>
+                    Finances</a
+                  >
+                </li>
+                <li>
+                  <a href="./sales.html"
+                    ><span class="material-symbols-outlined">
+                      shopping_bag
+                    </span>
+                    Sales</a
+                  >
+                </li>
+                <li>
+                  <a href="./products.html"
+                    ><span class="material-symbols-outlined">
+                      deployed_code
+                    </span>
+                    Products</a
+                  >
+                </li>
+                <li>
+                  <a href="./employees.html"
+                    ><span class="material-symbols-outlined"> group </span>
+                    Employees</a
+                  >
+                </li>
+                <li>
+                  <a href="./charts.html"
+                    ><span class="material-symbols-outlined"> finance </span>
+                    Charts</a
+                  >
+                </li>
+                <li>
+                  <a href="./settings.html"
+                    ><span class="material-symbols-outlined"> settings </span>
+                    Settings</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <a href="#" class="leave"
+              ><span class="material-symbols-outlined"> logout </span>Leave</a
+            >
           </div>
-          <nav class="menu">
-            <ul>
-              <li>
-                <a href="./index.html" class="active"
-                  ><span class="material-symbols-outlined"> home </span>
-                  Dashboard</a
-                >
-              </li>
-              <li>
-                <a href="./sales.html"
-                  ><span class="material-symbols-outlined"> shopping_bag </span>
-                  Sales</a
-                >
-              </li>
-              <li>
-                <a href="./products.html"
-                  ><span class="material-symbols-outlined">
-                    deployed_code
-                  </span>
-                  Products</a
-                >
-              </li>
-              <li>
-                <a href="./employees.html"
-                  ><span class="material-symbols-outlined"> group </span>
-                  Employees</a
-                >
-              </li>
-              <li>
-                <a href="./charts.html"
-                  ><span class="material-symbols-outlined"> bar_chart </span>
-                  Charts</a
-                >
-              </li>
-              <li>
-                <a href="./settings.html"
-                  ><span class="material-symbols-outlined"> settings </span>
-                  Settings</a
-                >
-              </li>
-            </ul>
-          </nav>
-          <a href="#" class="leave"
-            ><span class="material-symbols-outlined"> logout </span>Leave</a
-          >
         </aside>
         <main>
+          <div class="top-bar">
+            <div class="main-container">
+              <div class="left">
+                <span class="material-symbols-outlined menu"> menu </span>
+              </div>
+              <div class="right">
+                <span class="material-symbols-outlined notifications">
+                  notifications
+                </span>
+                <div class="user">
+                  <div class="image">
+                    <img src="./assets/images/user.webp" alt="user" />
+                  </div>
+                  <span class="user-name">Owner</span
+                  ><span class="material-symbols-outlined chevron">
+                    keyboard_arrow_down
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
           <header>
-            <h1>Título</h1>
+            <section class="main-container articles">
+              <article class="article">
+                <div class="main-icon">
+                  <span class="material-symbols-outlined"> store </span>
+                </div>
+                <div class="content">
+                  <span>your market</span>
+                  <h4>Corner Market</h4>
+                  <span>Peter Avenue, 1000</span>
+                </div>
+              </article>
+              <article class="article">
+                <div class="main-icon">
+                  <span class="material-symbols-outlined"> groups </span>
+                </div>
+                <div class="content">
+                  <span>your team</span>
+                  <h4>1</h4>
+                  <span>active employees</span>
+                </div>
+              </article>
+              <article class="article">
+                <div class="main-icon">
+                  <span class="material-symbols-outlined"> payments </span>
+                </div>
+                <div class="content">
+                  <span>available balance</span>
+                  <h4>$ 0,00</h4>
+                  <span>Last Update: Just now</span>
+                </div>
+              </article>
+            </section>
           </header>
+          <!-- payments -->
+          <div class="main-container">
+            <section class="payments cont">
+              <h2>Activity - Last 8 Days</h2>
+              <!-- 
+                <svg
+                  class="svg-line"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                >
+                  <polyline
+                    class="bar-expenses"
+                    points="0,95 12.5,80 25,45 37.5,75 50,30 62.5,85 75,40 87.5,60 100,35"
+                    fill="none"
+                  ></polyline>
+
+                  <circle
+                    cx="0"
+                    cy="95"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="12.5"
+                    cy="80"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="25"
+                    cy="45"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="37.5"
+                    cy="75"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="50"
+                    cy="30"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="62.5"
+                    cy="85"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="75"
+                    cy="40"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="87.5"
+                    cy="60"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="100"
+                    cy="35"
+                    class="circle-expense"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <polyline
+                    points="0,90 12.5,70 25,85 37.5,40 50,60 62.5,30 75,55 87.5,45 100,20"
+                    fill="none"
+                  ></polyline>
+
+                  <circle
+                    cx="0"
+                    cy="90"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="12.5"
+                    cy="70"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="25"
+                    cy="85"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="37.5"
+                    cy="40"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="50"
+                    cy="60"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="62.5"
+                    cy="30"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="75"
+                    cy="55"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="87.5"
+                    cy="45"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                  <circle
+                    cx="100"
+                    cy="20"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                    vector-effect="non-scaling-stroke"
+                  />
+                </svg>
+                -->
+              <div class="payments-container">
+                <div class="rows">
+                  <div class="row"><span>$ 200</span></div>
+                  <div class="row"><span>$ 100</span></div>
+                  <div class="row"><span>$ 50</span></div>
+                  <div class="row"><span>$ 20</span></div>
+                  <div class="row"><span>$ 10</span></div>
+                  <div class="row"><span>$ 0</span></div>
+                </div>
+                <div class="columns">
+                  <div class="column"><span>06/05</span></div>
+                  <div class="column"><span>07/05</span></div>
+                  <div class="column"><span>08/05</span></div>
+                  <div class="column"><span>09/05</span></div>
+                  <div class="column"><span>10/05</span></div>
+                  <div class="column"><span>11/05</span></div>
+                  <div class="column"><span>12/05</span></div>
+                  <div class="column"><span>13/05</span></div>
+                </div>
+                <div class="bars">
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (06/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (06/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (07/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (07/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (08/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (08/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (09/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (09/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (10/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (10/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (11/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (11/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (12/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (12/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                  <div class="bar-group">
+                    <div class="bar bar-1">
+                      <span class="info none"
+                        >Sunday (13/05) Earnings: $40</span
+                      >
+                    </div>
+                    <div class="bar bar-2">
+                      <span class="info none"
+                        >Sunday (13/05) Expenses: $40</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- history -->
+          <div class="main-container">
+            <section class="history cont">
+              <h2>Activity History</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>DATE / TIME</th>
+                    <th>ACTION</th>
+                    <th>DETAILS</th>
+                    <th>USER</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="material-symbols-outlined"
+                        >shopping_cart</span
+                      >
+                    </td>
+                    <td>21/05/2025 14:35</td>
+                    <td>Sale completed</td>
+                    <td>Sale #1258 - Total: $ 1,245.90</td>
+                    <td>Cashier</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="material-symbols-outlined">inventory_2</span>
+                    </td>
+                    <td>21/05/2025 13:22</td>
+                    <td>Product updated</td>
+                    <td>Rice 5kg - Price changed to $ 23.90</td>
+                    <td>Cashier</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="material-symbols-outlined">group</span>
+                    </td>
+                    <td>21/05/2025 12:10</td>
+                    <td>Employee registered</td>
+                    <td>New employee: Peter S. Johnson</td>
+                    <td>Owner</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="material-symbols-outlined"
+                        >monetization_on</span
+                      >
+                    </td>
+                    <td>21/05/2025 11:05</td>
+                    <td>Payment received</td>
+                    <td>Payment via Card - Total: $ 890.00</td>
+                    <td>Cashier</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="material-symbols-outlined">delete</span>
+                    </td>
+                    <td>21/05/2025 10:47</td>
+                    <td>Product removed</td>
+                    <td>Whole Milk 1L was removed from stock</td>
+                    <td>Cashier</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
         </main>
+        <button class="add-employee none">Add Employee</button>
         <!--
         <h2>💰 Market Cash</h2>
 
