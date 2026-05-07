@@ -3,7 +3,6 @@ import CashManage from "./management-market.mjs";
 const market = {};
 const employees = [];
 // DOM
-console.log("main.js  funcionando cacete");
 const buttons = document.querySelectorAll("button");
 const dashboard = document.querySelector(".dashboard");
 const addEmployee = document.querySelector(".add-employee");
@@ -42,6 +41,22 @@ const render = () => {
   const h1 = document.querySelector("h1");
   h1.innerText = `${market.market_name}!`;
 };
+
+const menuBtn = document.querySelector(".btn-menu");
+const closeMenu = document.querySelector(".close-menu");
+const main = document.querySelector("main");
+const aside = document.querySelector("aside");
+const body = document.querySelector("body");
+menuBtn.addEventListener("click", () => {
+  aside.classList.toggle("short");
+  main.classList.toggle("large");
+  body.classList.toggle("overflow-y");
+});
+closeMenu.addEventListener("click", () => {
+  aside.classList.remove("short");
+  main.classList.remove("large");
+  body.classList.remove("overflow-y");
+});
 // day sales
 
 /* 

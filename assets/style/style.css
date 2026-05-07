@@ -66,7 +66,7 @@ body {
   background: var(--light);
   color: var(--dark);
   min-height: 100svh;
-  min-width: 100svw;
+  min-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,10 +79,8 @@ body {
 }
 
 .wrapper {
-  overflow-x: hidden;
   width: 100%;
   height: 100%;
-  min-height: 100svh;
 }
 
 .container {
@@ -219,17 +217,58 @@ aside {
   box-shadow: var(--shadow);
   border-radius: 0 20px 0 0;
   background-size: cover;
-  min-height: 100svh;
   width: 20%;
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
+  min-height: 100svh;
+  height: auto;
+  overflow: visible;
+  transition: var(--transition);
+}
+
+aside.short {
+  width: 5%;
+  min-width: 70px;
+}
+
+aside.short .aside-logo img {
+  content: url("../images/marketpay-mob.webp");
+}
+
+aside.short .menu p {
+  display: none;
+}
+
+aside.short .aside-content {
+  width: 100%;
+}
+
+aside.short .menu {
+  padding: 15px;
+}
+
+aside.short .menu li a {
+  justify-content: center;
+  padding: 0;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+}
+
+aside.short .aside-logo img {
+  width: 35px;
+  margin: 0 auto;
+  margin-right: 13px;
+}
+
+aside.short .leave p {
+  display: none;
 }
 
 .aside-content {
-  height: 100%;
-  top: 0;
-  width: 130%;
+  height: 100vh;
+  top: 10px;
+  width: 100%;
+  position: sticky;
 }
 
 .leave {
@@ -237,7 +276,7 @@ aside {
   display: flex;
   justify-content: center;
   position: absolute;
-  left: 0;
+  left: auto;
   right: 0;
   bottom: 0;
   width: 100%;
@@ -248,6 +287,7 @@ aside {
   border-top: 1px solid var(--light);
   transition: var(--transition);
   background-color: var(--transparent);
+  margin-left: -15%;
 }
 
 .leave:hover {
@@ -304,6 +344,7 @@ aside .menu li a:hover {
   display: flex;
   justify-content: center;
   padding: 20px 0 10px 0;
+  margin-left: -10%;
 }
 
 .aside-logo img {
@@ -311,8 +352,29 @@ aside .menu li a:hover {
   max-width: 140px;
 }
 
+aside .close {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  z-index: 300;
+}
+
+aside .close .material-symbols-outlined {
+  color: var(--light);
+  font-size: 24px;
+}
+
+/* main */
+
 main {
   width: 80%;
+  padding-bottom: 25px;
+  overflow-x: hidden;
+}
+
+main.large {
+  width: 95%;
 }
 
 .main-container {
@@ -368,7 +430,7 @@ main {
 
 .user-name {
   color: var(--dark-gray);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .right .notifications {
@@ -434,6 +496,10 @@ main {
 }
 
 /* activity */
+
+.pay-container {
+  overflow: hidden;
+}
 
 .payments {
   height: 360px;
@@ -535,7 +601,7 @@ circle {
 }
 
 .bar .info {
-  background: var(--light);
+  background: var(--light-alt);
   color: var(--dark-green);
   padding: 12px;
   border: 1px solid var(--light-gray);
@@ -661,9 +727,17 @@ circle {
 
 /* table */
 
-table {
-  margin-top: 15px;
+.history {
   width: 100%;
+  overflow-x: auto;
+  margin-top: 15px;
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 750px;
 }
 
 table tr {
@@ -704,4 +778,144 @@ table tr td:nth-of-type(1) .material-symbols-outlined {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+footer {
+  margin-top: 30px;
+  padding: 20px 10px 0 10px;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+  border-top: 1px dashed #dadada;
+}
+
+footer p a {
+  color: var(--alternative-bar);
+}
+
+/* responsive settings 990, 767, 465 */
+
+@media (max-width: 990px) {
+  .user-name,
+  .row:nth-of-type(6),
+  .column:nth-of-type(6),
+  .column:nth-of-type(7),
+  .column:nth-of-type(8),
+  .bar-group:nth-of-type(6),
+  .bar-group:nth-of-type(7),
+  .bar-group:nth-of-type(8),
+  h2 .number,
+  .leave p {
+    display: none;
+  }
+  aside.short .leave p {
+    display: block;
+  }
+  .overflow-y {
+    overflow-y: hidden !important;
+  }
+  .aside-logo img {
+    content: url("../images/marketpay-mob.webp");
+  }
+  aside.short .aside-logo img {
+    content: url("../images/marketpay.webp");
+  }
+  aside {
+    width: 5%;
+    min-width: 70px;
+    padding-top: 5px;
+    z-index: 200;
+  }
+  aside.short {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+  }
+  aside.short .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  aside .menu p {
+    display: none;
+  }
+  aside.short .menu p {
+    display: block;
+  }
+  aside .aside-content {
+    width: 100%;
+  }
+  aside .menu {
+    padding: 15px;
+  }
+  aside .menu li a {
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+  }
+  aside.short .menu li a {
+    justify-content: flex-start;
+    padding: 0 15px;
+    box-sizing: content-box;
+  }
+  aside .aside-logo img {
+    width: 35px;
+    margin: 0 auto;
+    margin-right: 13px;
+  }
+  aside.short .aside-logo {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  aside.short .aside-logo img {
+    width: 100%;
+    margin: auto;
+  }
+  .aside-content {
+    height: 100vh;
+    top: 10px;
+  }
+  .leave {
+    width: 100%;
+    left: auto;
+  }
+  .main-container {
+    flex-wrap: wrap;
+  }
+  .articles {
+    margin-top: 30px;
+    gap: 10px;
+  }
+  .article {
+    width: 100%;
+    padding: 15px;
+    gap: 12px;
+  }
+  .article .main-icon {
+    min-width: 50px;
+    min-height: 50px;
+    width: 50px;
+    height: 50px;
+  }
+  .article .material-symbols-outlined {
+    font-size: 30px;
+  }
+  .article .content h4 {
+    font-size: 18px;
+  }
+  .columns,
+  .bars {
+    width: calc(100% - 30px);
+  }
+  .bars .bar-group {
+    gap: 0px;
+  }
 }

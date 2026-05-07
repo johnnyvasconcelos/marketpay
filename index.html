@@ -139,12 +139,15 @@
                 alt="MarketPay - Market System."
               />
             </div>
+            <div class="close close-menu">
+              <span class="material-symbols-outlined"> close </span>
+            </div>
             <nav class="menu">
               <ul>
                 <li>
                   <a href="./index.html" class="active"
                     ><span class="material-symbols-outlined"> home </span>
-                    Dashboard</a
+                    <p>Dashboard</p></a
                   >
                 </li>
                 <li>
@@ -152,7 +155,7 @@
                     ><span class="material-symbols-outlined">
                       cards_stack
                     </span>
-                    Finances</a
+                    <p>Finances</p></a
                   >
                 </li>
                 <li>
@@ -160,7 +163,7 @@
                     ><span class="material-symbols-outlined">
                       shopping_bag
                     </span>
-                    Sales</a
+                    <p>Sales</p></a
                   >
                 </li>
                 <li>
@@ -168,31 +171,32 @@
                     ><span class="material-symbols-outlined">
                       deployed_code
                     </span>
-                    Products</a
+                    <p>Products</p></a
                   >
                 </li>
                 <li>
                   <a href="./employees.html"
                     ><span class="material-symbols-outlined"> group </span>
-                    Employees</a
+                    <p>Employees</p></a
                   >
                 </li>
                 <li>
                   <a href="./charts.html"
                     ><span class="material-symbols-outlined"> finance </span>
-                    Charts</a
+                    <p>Charts</p></a
                   >
                 </li>
                 <li>
                   <a href="./settings.html"
                     ><span class="material-symbols-outlined"> settings </span>
-                    Settings</a
+                    <p>Settings</p></a
                   >
                 </li>
               </ul>
             </nav>
             <a href="#" class="leave"
-              ><span class="material-symbols-outlined"> logout </span>Leave</a
+              ><span class="material-symbols-outlined"> logout </span>
+              <p>Leave</p></a
             >
           </div>
         </aside>
@@ -200,7 +204,9 @@
           <div class="top-bar">
             <div class="main-container">
               <div class="left">
-                <span class="material-symbols-outlined menu"> menu </span>
+                <span class="material-symbols-outlined menu btn-menu">
+                  menu
+                </span>
               </div>
               <div class="right">
                 <span class="material-symbols-outlined notifications">
@@ -208,7 +214,11 @@
                 </span>
                 <div class="user">
                   <div class="image">
-                    <img src="./assets/images/user.webp" alt="user" />
+                    <img
+                      class="user-image"
+                      src="./assets/images/user.webp"
+                      alt="user"
+                    />
                   </div>
                   <span class="user-name">Owner</span
                   ><span class="material-symbols-outlined chevron">
@@ -253,9 +263,9 @@
             </section>
           </header>
           <!-- payments -->
-          <div class="main-container">
+          <div class="main-container pay-container">
             <section class="payments cont">
-              <h2>Activity - Last 8 Days</h2>
+              <h2>Activity - Last <span class="number">8 </span>Days</h2>
               <!-- 
                 <svg
                   class="svg-line"
@@ -598,6 +608,16 @@
               </table>
             </section>
           </div>
+          <div class="main-container">
+            <footer>
+              <p>
+                Developed by
+                <a href="https://johnnyvasconcelos.github.io/" target="_blank"
+                  >Johnny Vasconcelos</a
+                >.
+              </p>
+            </footer>
+          </div>
         </main>
         <button class="add-employee none">Add Employee</button>
         <!--
@@ -613,9 +633,7 @@
             <button type="submit" class="transfer">Transfer</button>
           </div>
         </form>
-
         <div class="cash">Cash: $ 0,00</div>
-
         <div class="historic"></div>
         -->
       </div>
